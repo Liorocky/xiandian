@@ -2,22 +2,15 @@
 # IAAS
 ## Platform
 XianDian_IAAS_V2.1 platform quick build manual.
-## Examination questions
+## Examination Questions & Answer
 XianDian_IAAS_V2.1 examination questions.
 
 # BigData
 ## Platform
 XianDian_BigData_V2.1 platform quick build manual.
-# Examination questions
+## Examination Questions & Answer
 XianDian_BigData_V2.1 examination questions.
 
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
 
 **Bold** and _Italic_ and `Code` text
 
