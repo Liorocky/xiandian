@@ -1,63 +1,60 @@
 ![IP地址规划表.png](https://s1.ax2x.com/2018/03/30/tC5Cn.png)
 
-
 # 基本环境配置
 1. 配置网络、主机名
 修改和添加/etc/sysconfig/network-scripts/ifcfg-enp\*（具体的网口）文件。
-   1. controller节点
-```
+  - controller节点
+		配置网络：
+		enp8s0: 192.168.100.10
+		DEVICE=enp8s0
+		TYPE=Ethernet
+		ONBOOT=yes
+		NM_CONTROLLED=no
+		BOOTPROTO=static
+		IPADDR=192.168.100.10
+		PREFIX=24
+		GATEWAY=192.168.100.1
+
+		enp9s0: 192.168.200.10
+		DEVICE=enp9s0
+		TYPE=Ethernet
+		ONBOOT=yes
+		NM_CONTROLLED=no
+		BOOTPROTO=static
+		IPADDR=192.168.200.10
+		PREFIX=24
+
+配置主机名：
+# hostnamectl set-hostname controller
+按ctrl+d 退出  重新登陆
+
+   2. controller节点
 配置网络：
-enp8s0: 192.168.100.10
+enp8s0: 192.168.100.20
 DEVICE=enp8s0
 TYPE=Ethernet
 ONBOOT=yes
 NM_CONTROLLED=no
 BOOTPROTO=static
-IPADDR=192.168.100.10
+IPADDR=192.168.100.20
 PREFIX=24
-GATEWAY=192.168.100.1
+GATEWAY=192.168.100.1`
 
-enp9s0: 192.168.200.10
+enp9s0: 192.168.200.20
 DEVICE=enp9s0
 TYPE=Ethernet
 ONBOOT=yes
 NM_CONTROLLED=no
 BOOTPROTO=static
-IPADDR=192.168.200.10
+IPADDR=192.168.200.20
 PREFIX=24
 
 配置主机名：
-# hostnamectl set-hostname controller
-  按ctrl+d 退出  重新登陆
-```
-   2. controller节点
-```
-  配置网络：
-  enp8s0: 192.168.100.20
-  DEVICE=enp8s0
-  TYPE=Ethernet
-  ONBOOT=yes
-  NM_CONTROLLED=no
-  BOOTPROTO=static
-  IPADDR=192.168.100.20
-  PREFIX=24
-  GATEWAY=192.168.100.1`
+# hostnamectl set-hostname compute
+按ctrl+d 退出  重新登陆
 
-  enp9s0: 192.168.200.20
-  DEVICE=enp9s0
-  TYPE=Ethernet
-  ONBOOT=yes
-  NM_CONTROLLED=no
-  BOOTPROTO=static
-  IPADDR=192.168.200.20
-  PREFIX=24
-
-  配置主机名：
-  # hostnamectl set-hostname compute
-  按ctrl+d 退出  重新登陆
-```
 2. 配置yum源
-```
+
 #Controller和compute节点
    1. yum源备份
 #mv /etc/yum.repos.d/\*  /opt/
@@ -169,22 +166,22 @@ sed 's/PASS=/PASS=000000/g' openrc.sh  -i
 4. 执行脚本安装
    - #controller&#compute *基础环境*  
    `iaas-pre-host.sh`
-   - #controller *Mysql*  
+   - #controller **Mysql**  
    `iaas-install-mysql.sh`
-   - #controller *Keystone*  
+   - #controller **Keystone**  
    `iaas-install-keystone.sh`
-   - #controller *Geystone*  
+   - #controller **Geystone**  
    `iaas-install-Glance.sh`
-   - #controller&#compute *Nova*  
+   - #controller&#compute **Nova**  
    `iaas-install-nova-controller.sh`  
    `iaas-install-nova-conmpute.sh`
-   - #controller&#compute *Neutron&Gre*  
+   - #controller&#compute **Neutron&Gre**  
    `iaas-install-neutron-controller.sh`  
    `iaas-install-neutron-conmpute.sh`  
    `iaas-install-neutron-controller-gre.sh`  
    `iaas-install-neutron-conmpute-gre.sh`
-   - #controller *Dashboard*  
+   - #controller **Dashboard**  
    `iaas-install-dashboard.sh`
 
-5. 访问Dashboard
+5. 访问Dashboard  
   `http://controller/dashboard`
