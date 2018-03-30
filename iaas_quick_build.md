@@ -167,23 +167,23 @@ sed 's/PASS=/PASS=000000/g' openrc.sh  -i
 ```
 
 4. 执行脚本安装
-   - #controller&#compute *基础环境*
+   - #controller&#compute *基础环境*  
    `iaas-pre-host.sh`
-   - #controller *Mysql*
+   - #controller *Mysql*  
    `iaas-install-mysql.sh`
-   - #controller *Keystone*
+   - #controller *Keystone*  
    `iaas-install-keystone.sh`
-   - #controller *Geystone*
+   - #controller *Geystone*  
    `iaas-install-Glance.sh`
-   - #controller&#compute *Nova*
-   `iaas-install-nova-controller.sh`
+   - #controller&#compute *Nova*  
+   `iaas-install-nova-controller.sh`  
    `iaas-install-nova-conmpute.sh`
-   - #controller&#compute *Neutron&Gre*
-   `iaas-install-neutron-controller.sh`
-   `iaas-install-neutron-conmpute.sh`
-   `iaas-install-neutron-controller-gre.sh`
+   - #controller&#compute *Neutron&Gre*  
+   `iaas-install-neutron-controller.sh`  
+   `iaas-install-neutron-conmpute.sh`  
+   `iaas-install-neutron-controller-gre.sh`  
    `iaas-install-neutron-conmpute-gre.sh`
-   - #controller *Dashboard*
+   - #controller *Dashboard*  
    `iaas-install-dashboard.sh`
 
 5. 访问Dashboard
