@@ -5,7 +5,7 @@
 1. 配置网络、主机名
 修改和添加/etc/sysconfig/network-scripts/ifcfg-enp\*（具体的网口）文件。
    1. controller节点
-   ```
+```
 配置网络：
 enp8s0: 192.168.100.10
 DEVICE=enp8s0
@@ -29,7 +29,7 @@ PREFIX=24
 配置主机名：
 # hostnamectl set-hostname controller
   按ctrl+d 退出  重新登陆
-   ```
+```
    2. controller节点
 ```
   配置网络：
