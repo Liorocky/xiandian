@@ -1,33 +1,33 @@
 ![IP地址规划表.png](https://s1.ax2x.com/2018/03/30/tC5Cn.png)
 
 # 基本环境配置
-1. 配置网络、主机名
-修改和添加/etc/sysconfig/network-scripts/ifcfg-enp\*（具体的网口）文件。
-   - controller节点
-		配置网络：
-		enp8s0: 192.168.100.10
-		DEVICE=enp8s0
-		TYPE=Ethernet
-		ONBOOT=yes
-		NM_CONTROLLED=no
-		BOOTPROTO=static
-		IPADDR=192.168.100.10
-		PREFIX=24
-		GATEWAY=192.168.100.1  
+1. 配置网络、主机名、修改和添加/etc/sysconfig/network-scripts/ifcfg-enp\*（具体的网口）文件。  
+```
+controller节点
+配置网络：
+enp8s0: 192.168.100.10
+DEVICE=enp8s0
+TYPE=Ethernet
+ONBOOT=yes
+NM_CONTROLLED=no
+BOOTPROTO=static
+IPADDR=192.168.100.10
+PREFIX=24
+GATEWAY=192.168.100.1
 
-		enp9s0: 192.168.200.10
-		DEVICE=enp9s0
-		TYPE=Ethernet
-		ONBOOT=yes
-		NM_CONTROLLED=no
-		BOOTPROTO=static
-		IPADDR=192.168.200.10
-		PREFIX=24  
+enp9s0: 192.168.200.10
+DEVICE=enp9s0
+TYPE=Ethernet
+ONBOOT=yes
+NM_CONTROLLED=no
+BOOTPROTO=static
+IPADDR=192.168.200.10
+PREFIX=24  
 
-		配置主机名：
-		# hostnamectl set-hostname controller
-		按ctrl+d 退出  重新登陆
-
+配置主机名：
+# hostnamectl set-hostname controller
+按ctrl+d 退出  重新登陆
+```
 2. controller节点
 配置网络：
 enp8s0: 192.168.100.20
